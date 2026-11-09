@@ -1,26 +1,26 @@
 class GhForgejoShim < Formula
   desc "GitHub CLI compatibility shim for Forgejo repositories"
   homepage "https://github.com/dirtydishes/gh-forgejo-shim"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "578c30e49fc46060738a403b12e7e390cfd64899db9a4862a9959ccb6b34de21"
+      sha256 "8552c03e2a07cc8d0fd9e8a5d4d3f2d5bf8f3476084ecccee741a87975e807f5"
     else
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "2f837462d091379063d4a210ca861159465320faf0a74674eaa30c1bf41c3057"
+      sha256 "86e69d35a7d4c36be7812e89436f524664759dd9424ec66c401a6353cd264444"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "97a5a1427fa333e504134c76ab7e17e8ed3dfe1dd884f287b82b6efdc44fb202"
+      sha256 "a6b4c2b39e0d450658a6c8818835fa8fafc01563178f140e214ce43c2f80f4df"
     else
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "781f4412bc15882e38f4fd2ec2a24f3a4ac62ec42072b3a66646836a8bb5d9db"
+      sha256 "ed32b2ab2c8057d1b6579767c560cf6fe899d06374e37ba9824584f933d93e3f"
     end
   end
 
@@ -37,6 +37,10 @@ class GhForgejoShim < Formula
       as a dependency. After installing or upgrading, run this from inside your
       Forgejo checkout to set up or refresh the managed gh wrapper:
         gfj bootstrap
+
+      It sends one anonymous usage report a day: the version, OS, agent and forge
+      software, never hosts, repositories or commands. `gfj telemetry show` prints
+      it, and `gfj telemetry off` stops it. See docs/telemetry.md in the repository.
     EOS
   end
 
