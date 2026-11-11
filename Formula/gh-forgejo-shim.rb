@@ -1,26 +1,26 @@
 class GhForgejoShim < Formula
   desc "GitHub CLI compatibility shim for Forgejo repositories"
   homepage "https://github.com/dirtydishes/gh-forgejo-shim"
-  version "0.4.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "8552c03e2a07cc8d0fd9e8a5d4d3f2d5bf8f3476084ecccee741a87975e807f5"
+      sha256 "83aabdcc6e331070560f045ea6b631cb83efa41a4617c2578a23aab0990c4c93"
     else
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "86e69d35a7d4c36be7812e89436f524664759dd9424ec66c401a6353cd264444"
+      sha256 "ca014d97bd0595b9aea0e55ce66323c92442c3c711b86ddeaaa5f6cbac60dd11"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a6b4c2b39e0d450658a6c8818835fa8fafc01563178f140e214ce43c2f80f4df"
+      sha256 "652b7eabd98a2286898d73656b7f2114595cbc397491883b477974744b1ec3eb"
     else
       url "https://github.com/dirtydishes/gh-forgejo-shim/releases/download/v#{version}/gh-forgejo-shim-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ed32b2ab2c8057d1b6579767c560cf6fe899d06374e37ba9824584f933d93e3f"
+      sha256 "dd10716100dd70d4ecac838d41323708c56e7baccee9cf8943b8c2a50e1960b6"
     end
   end
 
